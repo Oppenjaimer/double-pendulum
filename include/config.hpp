@@ -24,4 +24,11 @@ namespace config {
     constexpr float zoom_sensitivity_keyboard = 0.08f;  ///< Key press sensitivity for keyboard zooming.
     constexpr float zoom_min = 0.1f;                    ///< Minimum camera zoom level.
     constexpr float zoom_max = 10.0f;                   ///< Maximum camera zoom level.
+
+    // Pendulum
+    constexpr float pivot_radius = 2.0f;                ///< Pivot point radius.
+    constexpr float bob_radius = 12.0f;                 ///< Bob radius.
+    constexpr float length = 100.0f;                    ///< Initial string length (px).
+    constexpr float mass = 1.0f;                        ///< Initial bob mass.
+    constexpr float angle = 0.0f;                       ///< Initial bob angle (rad).
 }
