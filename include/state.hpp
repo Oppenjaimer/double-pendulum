@@ -13,7 +13,6 @@ struct State {
     bool settings_collapse = config::settings_collapse; ///< Whether the settings panel is collapsed.
     bool settings_trigger = false;                      ///< Whether a settings panel collapse was triggered.
 
-    float gravity = config::gravity;                    ///< Initial gravity.
     Pendulum pendulum;                                  ///< Double pendulum.
 };
 

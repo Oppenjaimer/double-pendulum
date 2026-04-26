@@ -41,4 +41,5 @@ namespace config {
     constexpr float length = 4.0f;                      ///< Initial string length.
     constexpr float mass = 1.0f;                        ///< Initial bob mass.
     constexpr float angle = 0.0f;                       ///< Initial bob angle (deg).
+    constexpr float dt = 0.025f;                        ///< Time step.
 }
