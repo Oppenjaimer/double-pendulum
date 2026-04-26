@@ -9,7 +9,7 @@ struct Pendulum {
     Vector2 origin;         ///< Pivot point in screen coordinates.
     float l1, l2;           ///< Length of each string.
     float m1, m2;           ///< Mass of each bob.
-    float theta1, theta2;   ///< Angle of each bob relative to the vertical axis (rad).
+    float theta1, theta2;   ///< Angle of each bob relative to the vertical axis (deg).
 };
 
 namespace pendulum {

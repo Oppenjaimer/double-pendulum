@@ -11,11 +11,20 @@ namespace config {
     // Screen
     constexpr int screen_width = 1280;                  ///< Initial screen width (px).
     constexpr int screen_height = 720;                  ///< Initial screen height (px).
+    constexpr float scale = 25.0f;                      ///< Scaling factor.
 
     // Settings panel
     constexpr int settings_collapse = false;            ///< Default state of the settings panel.
     constexpr int settings_pos_x = 10;                  ///< Default X position of the settings panel.
     constexpr int settings_pos_y = 10;                  ///< Default Y position of the settings panel.
+    constexpr float gravity_min = 0.0f;                 ///< Minimum gravity.
+    constexpr float gravity_max = 20.0f;                ///< Maximum gravity.
+    constexpr float length_min = 1.0f;                  ///< Minimum string length.
+    constexpr float length_max = 10.0f;                 ///< Maximum string length.
+    constexpr float mass_min = 0.1f;                    ///< Minimum bob mass.
+    constexpr float mass_max = 20.0f;                   ///< Maximum bob mass.
+    constexpr float angle_min = 0.0f;                   ///< Minimum bob angle (deg).
+    constexpr float angle_max = 360.0f;                 ///< Maximum bob angle (deg).
 
     // Camera
     constexpr float pan_sensitivity_mouse = 1.0f;       ///< Drag sensitivity for mouse panning.
@@ -25,10 +34,11 @@ namespace config {
     constexpr float zoom_min = 0.1f;                    ///< Minimum camera zoom level.
     constexpr float zoom_max = 10.0f;                   ///< Maximum camera zoom level.
 
-    // Pendulum
+    // Simulation
     constexpr float pivot_radius = 2.0f;                ///< Pivot point radius.
     constexpr float bob_radius = 12.0f;                 ///< Bob radius.
-    constexpr float length = 100.0f;                    ///< Initial string length (px).
+    constexpr float gravity = 9.8f;                     ///< Initial gravity.
+    constexpr float length = 4.0f;                      ///< Initial string length.
     constexpr float mass = 1.0f;                        ///< Initial bob mass.
-    constexpr float angle = 0.0f;                       ///< Initial bob angle (rad).
+    constexpr float angle = 0.0f;                       ///< Initial bob angle (deg).
 }

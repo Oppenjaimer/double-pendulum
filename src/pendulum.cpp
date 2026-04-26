@@ -8,13 +8,16 @@
  * @brief Convert polar into Cartesian coordinates relative to some origin.
  * @param origin Cartesian plane origin in screen coordinates.
  * @param r Polar radius.
- * @param theta Polar angle.
+ * @param theta Polar angle (deg).
  * @returns Relative position in Cartesian coordinates.
  */
 static Vector2 cartesian(Vector2 origin, float r, float theta) {
+    float r_scaled = r * config::scale;
+    float theta_rad = theta * PI / 180.0f;
+
     return {
-        origin.x + r * sinf(theta),
-        origin.y + r * cosf(theta),
+        origin.x + r_scaled * sinf(theta_rad),
+        origin.y + r_scaled * cosf(theta_rad),
     };
 }
 

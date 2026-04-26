@@ -36,5 +36,16 @@ void gui::render(State& state) {
     if (ImGui::Button(state.is_paused ? "Play [SPACE]" : "Pause [SPACE]"))
         state.is_paused = !state.is_paused;
 
+    // Simulation parameters
+    ImGui::SeparatorText("Simulation");
+
+    ImGui::SliderFloat("Gravity", &state.gravity, config::gravity_min, config::gravity_max);
+    ImGui::SliderFloat("Length 1", &state.pendulum.l1, config::length_min, config::length_max);
+    ImGui::SliderFloat("Length 2", &state.pendulum.l2, config::length_min, config::length_max);
+    ImGui::SliderFloat("Mass 1", &state.pendulum.m1, config::mass_min, config::mass_max);
+    ImGui::SliderFloat("Mass 2", &state.pendulum.m2, config::mass_min, config::mass_max);
+    ImGui::SliderFloat("Angle 1", &state.pendulum.theta1, config::angle_min, config::angle_max);
+    ImGui::SliderFloat("Angle 2", &state.pendulum.theta2, config::angle_min, config::angle_max);
+
     ImGui::End();
 }
