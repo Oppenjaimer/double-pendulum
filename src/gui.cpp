@@ -39,6 +39,7 @@ void gui::render(State& state) {
     // Simulation parameters
     ImGui::SeparatorText("Simulation");
 
+    ImGui::SliderFloat("Time scale", &state.time_scale, config::time_scale_min, config::time_scale_max);
     ImGui::SliderFloat("Gravity", &state.pendulum.gravity, config::gravity_min, config::gravity_max);
     ImGui::SliderFloat("Length 1", &state.pendulum.l1, config::length_min, config::length_max);
     ImGui::SliderFloat("Length 2", &state.pendulum.l2, config::length_min, config::length_max);

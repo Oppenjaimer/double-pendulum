@@ -13,6 +13,8 @@ struct State {
     bool settings_collapse = config::settings_collapse; ///< Whether the settings panel is collapsed.
     bool settings_trigger = false;                      ///< Whether a settings panel collapse was triggered.
 
+    float time_scale = config::time_scale;              ///< Time scale.
+    float time_acc = 0.0f;                              ///< Time accumulator.
     Pendulum pendulum;                                  ///< Double pendulum.
 };
 
