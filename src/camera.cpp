@@ -91,7 +91,7 @@ void camera::update(Camera2D& camera) {
 
 void camera::reset(Camera2D& camera) {
     camera.offset = {GetScreenWidth() / 2.0f, GetScreenHeight() / 2.0f};
-    camera.target = {config::world_width / 2.0f, config::world_height / 2.0f};
+    camera.target = {config::screen_width / 2.0f, config::screen_height / 2.0f};
     camera.rotation = 0.0f;
     camera.zoom = 1.0f;
 }

@@ -9,9 +9,6 @@ void simulation::update(State& state) {
 void simulation::draw(State& state) {
     (void)state;
 
-    // World bounds
-    DrawRectangleLines(0, 0, config::world_width, config::world_height, theme::bg4);
-
     // Placeholder circle
-    DrawCircle(config::world_width / 2.0f, config::world_height / 2.0f, 10, theme::orange);
+    DrawCircle(config::screen_width / 2.0f, config::screen_height / 2.0f, 10, theme::orange);
 }
