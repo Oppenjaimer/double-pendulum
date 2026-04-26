@@ -46,4 +46,6 @@ namespace config {
     constexpr float time_scale = 1.0f;                  ///< Initial time scale.
     constexpr float dt = 0.005f;                        ///< Time step.
     constexpr float scaled_time_threshold = 0.1f;       ///< Scaled time cap.
+    constexpr int trace_len = 500;                      ///< Maximum number of points in trace.
+    constexpr float trace_opacity = 0.5f;               ///< Trace opacity.
 }

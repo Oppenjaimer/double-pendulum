@@ -48,5 +48,7 @@ void gui::render(State& state) {
     ImGui::SliderFloat("Angle 1", &state.pendulum.theta1, config::angle_min, config::angle_max);
     ImGui::SliderFloat("Angle 2", &state.pendulum.theta2, config::angle_min, config::angle_max);
 
+    ImGui::Checkbox("Show trace", &state.show_trace);
+
     ImGui::End();
 }

@@ -15,5 +15,5 @@ void simulation::update(State& state) {
 }
 
 void simulation::draw(State& state) {
-    pendulum::draw(state.pendulum);
+    pendulum::draw(state.pendulum, state.show_trace);
 }

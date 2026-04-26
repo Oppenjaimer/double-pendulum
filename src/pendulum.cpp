@@ -100,14 +100,28 @@ void pendulum::update(Pendulum& pendulum) {
     pendulum.theta2 = t2 * 180.0f / PI;
     pendulum.omega1 = w1 * 180.0f / PI;
     pendulum.omega2 = w2 * 180.0f / PI;
-}
 
-void pendulum::draw(Pendulum& pendulum) {
-    DrawCircleV(pendulum.origin, config::pivot_radius, theme::fg0);
-
+    // Update trace
     Vector2 pos1 = cartesian(pendulum.origin, pendulum.l1, pendulum.theta1);
     Vector2 pos2 = cartesian(pos1, pendulum.l2, pendulum.theta2);
+    if (pendulum.trace.size() > config::trace_len) pendulum.trace.pop_front();
+    pendulum.trace.push_back(pos2);
+}
 
+void pendulum::draw(Pendulum& pendulum, bool show_trace) {
+    // Trace
+    if (show_trace && pendulum.trace.size() >= 2) {
+        for (size_t i = 0; i < pendulum.trace.size() - 1; i++) {
+            DrawLineV(pendulum.trace[i], pendulum.trace[i + 1], Fade(theme::yellow, config::trace_opacity));
+        }
+    }
+
+    // Origin
+    DrawCircleV(pendulum.origin, config::pivot_radius, theme::fg0);
+
+    // Bobs and strings
+    Vector2 pos1 = cartesian(pendulum.origin, pendulum.l1, pendulum.theta1);
+    Vector2 pos2 = cartesian(pos1, pendulum.l2, pendulum.theta2);
     DrawLineV(pendulum.origin, pos1, theme::fg0);
     DrawLineV(pos1, pos2, theme::fg0);
     DrawCircleV(pos1, config::bob_radius, theme::red);
@@ -121,4 +135,5 @@ void pendulum::reset(Pendulum& pendulum) {
     pendulum.m1 = pendulum.m2 = config::mass;
     pendulum.theta1 = pendulum.theta2 = config::angle;
     pendulum.omega1 = pendulum.omega2 = 0.0f;
+    pendulum.trace.clear();
 }
